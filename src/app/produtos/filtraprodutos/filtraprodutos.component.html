@@ -1,0 +1,27 @@
+<section id="filtro">
+  <div id="titulo">
+    <label for="filtroTipo">Tipo:</label>
+  </div>
+
+  <div id="filtroTipo">
+    <label *ngFor="let tipo of tiposProdutos">
+      <input type="radio" name="filtroTipo" [(ngModel)]="filtroTipo" [value]="tipo" (change)="filtra()" /> {{ tipo }}
+    </label>
+    <label>
+      <input type="radio" name="filtroTipo" [(ngModel)]="filtroTipo" value="todos" (change)="filtra()" /> Todos
+    </label>
+  </div>
+
+  <div id="titulo">
+    <label for="filtroCor">Cor:</label>
+  </div>
+
+  <div id="filtroCor">
+    <label *ngFor="let cor of coresProdutos">
+      <input type="radio" name="filtroCor" [(ngModel)]="filtroCor" [value]="cor" (change)="filtra()" /> {{ cor }}
+    </label>
+    <label>
+      <input type="radio" name="filtroCor" [(ngModel)]="filtroCor" value="todos" (change)="filtra()" /> Todos
+    </label>
+  </div>
+</section>

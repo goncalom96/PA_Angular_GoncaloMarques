@@ -1,0 +1,4 @@
+<h1>Gestão de Produtos</h1>
+<app-insereprodutos (produto)="inserirProduto($event)"></app-insereprodutos>
+<app-pesquisa (palavraPesquisa)="pesquisar($event)"></app-pesquisa>
+<app-tabelaprodutos [listaProdutos]="listaProdutos" (idProdutoAtualizar)="alterarDestaqueProduto($event)" (idProdutoEliminar)="eliminarProduto($event)"></app-tabelaprodutos>

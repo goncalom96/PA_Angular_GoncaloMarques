@@ -1,0 +1,26 @@
+<section id="listaprodutos">
+  <section id="filtro" class="filtro-column">
+    <app-filtraprodutos (filtro)="filtrarProdutos($event.tipo, $event.cor)"></app-filtraprodutos>
+  </section>
+
+  <section id="resultadoProdutos">
+    <h1>Homem</h1>
+    <section id="texto">
+      <p *ngIf="listaProdutosFiltrados.length===0">Não existem produtos!</p>
+      <p>Total de resultados: {{ listaProdutosFiltrados.length }}</p>
+    </section>
+
+    <div id="produtos">
+      <div id="produto" *ngFor="let produto of listaProdutosFiltrados">
+        <p><img width="200px" alt="Imagem principal" [src]="'assets/img/' + produto.foto_principal"
+            (click)="mostraInfo(produto.id!)"></p>
+        <p><strong>{{ produto.marca}}</strong></p>
+        <small>{{ produto.nome}}</small>
+        <p>{{ produto.preco}}€</p>
+        <p id="wishlistIcon"><i class="far fa-star" [class.fas]="verificarWishlist(produto)"
+            (click)="toggleWishlist(produto)"></i></p>
+        <p><button id="btAdicionar" (click)="adicionarCarrinho(produto)">Adicionar ao Carrinho</button></p>
+      </div>
+    </div>
+  </section>
+</section>

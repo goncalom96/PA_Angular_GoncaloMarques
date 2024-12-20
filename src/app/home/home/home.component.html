@@ -1,0 +1,14 @@
+<section id="home">
+
+  <app-carousel [imagens]="imagens" [autoSlide]="true"></app-carousel>
+
+  <h1>DESTAQUES</h1>
+  <section id="produtosDestaque">
+    <section id="imagensProdutos" *ngFor="let produto of listaProdutos" (click)="mostraInfo(produto.id!)">
+      <section *ngIf="produto.destaque">
+        <p><img alt="Imagem principal" [src]="'assets/img/' + produto.foto_principal" /></p>
+      </section>
+    </section>
+  </section>
+
+</section>

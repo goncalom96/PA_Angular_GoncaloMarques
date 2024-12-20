@@ -1,0 +1,16 @@
+<ng-container *ngIf="(produto | keyvalue)?.length">
+    <section id="infoproduto">
+        <h1>{{ produto.marca }}</h1>
+        <p id="marca">{{ produto.nome }}</p>
+        <section id="imagensProdutos">
+            <p><img alt="Imagem principal" [src]="'assets/img/' + produto.foto_principal" /></p>
+            <p><img alt="Imagem secundária" [src]="'assets/img/' + produto.foto_secundaria" /></p>
+        </section>
+        <p>{{ produto.cor }}</p>
+        <p>{{ produto.preco }}€</p>
+        <p id="descricao">{{ produto.descricao }}</p>
+        <p><button (click)="adicionarCarrinho(produto)">Adicionar ao Carrinho</button></p>
+
+        <p><a href="javascript:void(0)" (click)="voltarPaginaAnterior()">Voltar à página anterior</a></p>
+    </section>
+</ng-container>

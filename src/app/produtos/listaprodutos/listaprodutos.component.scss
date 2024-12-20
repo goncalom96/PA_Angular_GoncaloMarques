@@ -1,0 +1,62 @@
+h1 {
+    font-size: 2rem;
+}
+
+#texto {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-left: 80px;
+}
+
+#listaprodutos {
+    display: flex;
+    flex-direction: row;
+}
+
+#filtro {
+    flex-basis: 10%;
+}
+
+#resultadoProdutos {
+    flex-basis: 90%;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+}
+
+#produtos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+#produto {
+    display: inline-block;
+    position: relative;
+    margin-left: 100px;
+}
+
+#wishlistIcon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(-50%, -50%);
+    color: red;
+}
+
+#btAdicionar{
+    right: 23px;
+    background-color:red;
+    color: white;
+    border-radius: 5%;
+    padding: 4px 10px;
+    cursor: pointer;
+    text-align: center;
+}

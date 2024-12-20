@@ -1,0 +1,35 @@
+#infoproduto {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#marca {
+    font-size: 1.3rem;
+}
+
+#imagensProdutos {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#imagensProdutos * {
+    margin-left: 10px;
+}
+
+#descricao {
+text-align: center;
+ width: 600px;
+}
+
+a {
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+}
+
+img {
+    height: 250px;
+}

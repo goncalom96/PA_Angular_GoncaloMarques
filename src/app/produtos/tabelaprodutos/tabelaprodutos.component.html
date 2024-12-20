@@ -1,0 +1,32 @@
+<p *ngIf="listaProdutos.length===0">Não existem produtos!</p>
+<p>Total de produtos: {{ listaProdutos.length }}</p>
+<table class="tabelaDados" *ngIf="listaProdutos.length>0">
+    <thead>
+        <tr>
+            <th>Foto</th>
+            <th>Marca</th>
+            <th>Produto</th>
+            <th>Tipo de produto</th>
+            <th>Cor</th>
+            <th>Preço</th>
+            <th>Descrição</th>
+            <th>Destaque</th>
+            <th>Operações</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let produto of listaProdutos" (click)="mostraInfo(produto.id!)">
+            <td>
+                <img width="100px"alt="Imagem principal" [src]="'assets/img/' + produto.foto_principal" />
+            </td>
+            <td>{{ produto.marca}}</td>
+            <td>{{ produto.nome}}</td>
+            <td>{{ produto.tipo_de_produto}}</td>
+            <td>{{ produto.cor}}</td>
+            <td>{{ produto.preco}}€</td>
+            <td>{{ produto.descricao}}</td>
+            <td (click)="alteraDestaqueProduto(produto.id!,$event)">{{ produto.destaque ? '&#10004;' : '&#10006;' }}</td>
+            <td><button type="button" (click)="eliminaProduto(produto.id!,$event)">X</button></td>
+        </tr>
+    </tbody>
+</table>

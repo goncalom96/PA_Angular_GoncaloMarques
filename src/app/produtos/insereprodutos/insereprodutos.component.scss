@@ -1,0 +1,49 @@
+.ng-touched.ng-dirty.ng-invalid:not(form) {
+    background-color: rgba(255, 208, 0, 0.816);
+}
+
+.obrigatorio {
+    display: none;
+}
+
+small:not(:first-child) {
+    color: red;
+  }
+
+.ng-touched.ng-invalid:not(form) + .obrigatorio {
+    display: inline;
+}
+
+#formProdutos {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+#formProdutos > p {
+    display: flex;
+}
+
+#formProdutos > p > input:not(#destaque)  {
+    width: 50%;
+    border: 1px solid #aaa;
+    background-color: rgba(255,255,255, 1);
+}
+
+#descricao  {
+    height: 100px;
+}
+
+#formProdutos > p > label {
+    width: 85px;
+}
+
+#btInserir {
+    right: 23px;
+    background-color:#0d6efd;
+    color: white;
+    border-radius: 5%;
+    padding: 4px 10px;
+    cursor: pointer;
+    text-align: center;
+}

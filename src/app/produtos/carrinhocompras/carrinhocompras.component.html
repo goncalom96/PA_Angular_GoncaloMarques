@@ -1,0 +1,30 @@
+<section id="carrinhoCompras">
+    <h1>Carrinho de Compras</h1>
+    <p>Total de produtos no carrinho: {{ listaCarrinho.length }}</p>
+  
+    <table class="tabelaDados" *ngIf="listaCarrinho.length>0">
+      <thead>
+        <tr>
+          <th>Foto</th>
+          <th>Marca</th>
+          <th>Nome</th>
+          <th>Preço</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let produto of listaCarrinho" (click)="mostraInfo(produto.id!)">
+            <td>
+                <img width="100px"alt="Imagem principal" [src]="'assets/img/' + produto.foto_principal" />
+            </td>
+          <td>{{ produto.marca }}</td>
+          <td>{{ produto.nome }}</td>
+          <td>{{ produto.preco }}€</td>
+          <td><button id="btRemover" (click)="removerProdutoCarrinho(produto)">Remover</button></td>
+        </tr>
+        <tr>
+          <td colspan="4" class="total-label">Total da Encomenda:</td>
+          <td class="total-value">{{ calcularTotalEncomenda() }}€</td>
+      </tbody>
+    </table>
+  </section>

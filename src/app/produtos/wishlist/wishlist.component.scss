@@ -1,0 +1,38 @@
+#wishlist {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#produtos {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items:center;
+    gap: 30px;
+}
+
+#texto {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    text-align: center;
+}
+
+#preco {
+    font-size: 1.4rem;
+}
+
+#btRemover{
+    right: 23px;
+    background-color:red;
+    color: white;
+    border-radius: 5%;
+    padding: 4px 10px;
+    cursor: pointer;
+    text-align: center;
+}
+

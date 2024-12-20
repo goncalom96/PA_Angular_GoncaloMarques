@@ -1,0 +1,95 @@
+:host {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.75);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+:host > section {
+    background-color: white;
+    border: 3px solid #666;
+    box-shadow: 3px 3px 5px #000;
+    width: 300px;
+    height: 240px;
+    max-width: 600px;
+    padding-left: 35px;
+}
+
+
+#btValidar {
+    position: absolute;
+    background-color:#0d6efd;
+    color: white;
+    border-radius: 10%;
+    padding: 3px 10px;
+    cursor: pointer;
+    right: 48%;
+}
+
+#btFecha {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid #666;
+    border-radius: 50%;
+    box-shadow: 3px 3px 5px #000;
+    width: 20px;
+    height: 20px;
+    font-weight: bold;
+    color: black;
+    background-color: white;
+    position: absolute;
+    cursor: pointer;
+    user-select: none;
+    margin-bottom: 0px;
+    right: 40%;
+    top: 32%;
+}
+
+#btFecha:hover {
+    background-color: #666;
+    color: white;
+}
+
+input {
+    margin-left: 5px;
+    width: 150px;
+}
+
+.ng-touched.ng-dirty.ng-invalid:not(form) {
+    background-color: rgba(255, 208, 0, 0.816);
+}
+
+.obrigatorio {
+    display: none;
+}
+
+.ng-touched.ng-invalid:not(form) + .obrigatorio {
+    display: inline;
+}
+
+
+label {
+    font-size: 14px;
+}
+
+small {
+    padding: 0;
+    margin: 0;
+    color: red;
+    font-size: 10px;
+}
+
+#titulo {
+    margin-bottom: 0;
+}
+
+#formUsers {
+    font-size: 1rem;
+}

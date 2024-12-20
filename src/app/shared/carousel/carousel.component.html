@@ -1,0 +1,13 @@
+<section id="saldos">
+    <section *ngIf="imagens && imagens.length > 0" class="carousel-container">
+      <h2><b>SALDOS</b></h2>
+      <img *ngFor="let imagem of imagens; let i= index" alt="Imagem Slider" [src]="imagem.src"
+        [ngClass]="{'image-active' : selectedIndex === i}" id="fade">
+    </section>
+
+    <section *ngIf="indicators" class="carousel-dot-container">
+      <span *ngFor="let dot of imagens; let i= index" class="dot" [ngClass]="{'active' : selectedIndex === i}"
+        (click)="selectImage(i)">
+      </span>
+    </section>
+  </section>

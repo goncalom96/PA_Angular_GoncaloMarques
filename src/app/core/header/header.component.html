@@ -1,0 +1,79 @@
+<nav id="menuPrincipal">
+  <ul>
+    <li>
+      <a id="homem" href="#">Homem </a>
+      <ul>
+          <li><a href="#">Casacos</a></li>
+          <li><a href="#">Camisas</a></li>
+          <li><a href="#">Calças</a></li>
+          <li><a href="#">Sweatshirts</a></li>
+          <li><a href="#">Polos</a></li>
+          <li><a href="#">Sapatos</a></li>
+          <li><a routerLink="/listaprodutos"  routerLinkActive="activa" [routerLinkActiveOptions]="{ exact : true }">Todos</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#">Mulher</a>
+      <ul id="subMenu">
+        <li><a href="#">Vestidos</a></li>
+        <li><a href="#">Blusões</a></li>
+        <li><a href="#">Coletes</a></li>
+        <li><a href="#">Jeans</a></li>
+        <li><a href="#">Saias</a></li>
+        <li><a href="#">Calções</a></li>
+        <li><a href="#">Lingerie</a></li>
+        <li><a href="#">Sapatos</a></li>
+        <li><a href="#">Malas</a></li>
+        <li><a href="#">Todos</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#"><img src="/assets/img/logo.png" alt="Logotipo H&M" height="50px"></a>
+    </li>
+    <li>
+      <a id="crianca" href="#">Criança</a>
+      <ul>
+        <li><a href="#">Menina | 6-14 Anos</a></li>
+        <li><a href="#">Menino | 6-14 Anos</a></li>
+        <li><a href="#">Bebé Menina | 3 Meses - 5 Anos</a></li>
+        <li><a href="#">Bebé Menino | 3 Meses - 5 Anos</a></li>
+        <li><a href="#">Mini | 0-12 Meses</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#">Acessórios</a>
+      <ul>
+        <li><a href="#">Malas</a></li>
+        <li><a href="#">Pulseiras</a></li>
+        <li><a href="#">Anéis</a></li>
+      </ul>
+    </li>
+  </ul>
+  
+  <section id="iconsHeader">
+    <section id="iconsLogOff" *ngIf="!isLoggedIn">
+      <a href="" (click)="mostraLogin($event)"><i class="fa-solid fa-user-plus"></i></a>
+      <a href=""><i class="fa-solid fa-arrow-right-to-bracket"></i></a>
+    </section>
+  
+    <section id="iconsLogOn" *ngIf="isLoggedIn && !adminUser() && userAutenticado()">
+      <p id="bemVindo">Bem-vindo(a), {{user?.nome}}</p>
+      <a routerLink="/wishlist"><i class="fa-solid fa-clipboard"></i></a>
+      <a routerLink="/carrinhocompras"><i class="fa-solid fa-cart-shopping"></i></a>
+      <a href=""><i class="fa-solid fa-user"></i></a>
+      <a routerLink="" (click)="logout()"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
+    </section>
+  
+    <section id="iconsAdminLogOn" *ngIf="isLoggedIn && adminUser() && userAutenticado()">
+      <p id="bemVindo">Bem-vindo(a), {{user?.nome}}</p>
+      <a routerLink="/gestaoprodutos"><i class="fa-solid fa-gear"></i></a>
+      <a routerLink="/wishlist"><i class="fa-solid fa-clipboard"></i></a>
+      <a routerLink="/carrinhocompras"><i class="fa-solid fa-cart-shopping"></i></a>
+      <a href=""><i class="fa-solid fa-user"></i></a>
+      <a routerLink="" (click)="logout()"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
+    </section>
+  </section>
+  
+  <app-modal (closeWindow)="fecharLogin()" (loginSuccess)="login($event)" *ngIf="mostraModal"></app-modal>
+
+</nav>

@@ -1,0 +1,27 @@
+<section>
+    <h4 id="titulo">Controlo de acessos</h4>
+    <form id="formUsers" [formGroup]="formUsers" (ngSubmit)="validar()">
+
+        <ng-container *ngIf="formUsers.get('email' && 'senha')?.touched && formUsers.get('email' && 'senha')?.invalid">
+            <small *ngIf="formUsers.get('email')?.hasError('email')">O e-mail tem um formato incorreto!</small>
+            <br>
+            <small *ngIf="formUsers.get('email' && 'senha')?.hasError('required')">Os dois campos são de preenchimento obrigatório!</small>
+            <br>
+        </ng-container>
+        <ng-container *ngIf="!utilizadorExiste">
+            <small *ngIf="!utilizadorExiste">Utilizador inexistente!</small>
+        </ng-container>
+
+        <p>
+            <label for="email">E-mail:</label> <input type="text" id="email" formControlName="email"> <span
+                class="obrigatorio">*</span>
+        </p>
+
+        <p><label for="senha">Senha:</label> <input type="password" id="senha" formControlName="senha"><span
+                class="obrigatorio">*</span></p>
+
+        <p><button id="btValidar" type="submit">Validar</button></p>
+
+        <p><button id="btFecha" type="button" (click)="fechar()">X</button></p>
+      </form>
+</section>

@@ -1,0 +1,87 @@
+#menuPrincipal {
+    padding-top: 40px;
+    display: flex;
+    flex-wrap: wrap;    
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3rem;
+  }
+
+#menuPrincipal * {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#menuPrincipal ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+#menuPrincipal li {
+    position: relative;
+    display: inline-block;
+}
+
+#menuPrincipal li ul {
+    position: absolute;
+    display: none;
+}
+
+#menuPrincipal li:hover > ul {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    height: auto;
+    width: 150px;
+}
+
+#menuPrincipal a {
+    display: inline-block;
+    align-items: center;
+    padding: 8px 12px;
+    text-decoration: none;
+    color: #333;
+}
+
+
+#menuPrincipal ul ul {
+    background-color: white;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+    font-size: 1.1rem;
+}
+
+#iconsHeader {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    font-size: 1.2rem;
+}
+
+#iconsHeader * {
+    margin-left: -8px;
+}
+
+#crianca, #homem {
+    border-right: 1px solid #000;
+}
+
+#iconsLogOn {
+    display: flex;
+    gap: 5px;
+}
+
+#bemVindo{
+    margin-right: 7px;
+}
+
+#iconsAdminLogOn {
+    display: flex;
+    gap: 5px;
+}

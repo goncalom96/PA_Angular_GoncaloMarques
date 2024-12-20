@@ -1,1 +1,38 @@
-/* You can add global styles to this file, and also import other style files */
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    max-width: 1400px;
+    margin: auto;
+}
+
+html, body { height: 100%; }
+
+.tabelaDados {
+    border-collapse: collapse;
+}
+.tabelaDados, .tabelaDados th, .tabelaDados td {
+    border: 1px solid #000;
+}
+.tabelaDados th, .tabelaDados td {
+    padding: 10px 20px;
+}
+.tabelaDados th {
+    background-color: black;
+    color: white;
+}
+.tabelaDados tbody tr:nth-child(even) {
+    background-color: #ccc;
+}
+.tabelaDados tbody tr:hover {
+    background-color: #999;
+    color: white;
+}

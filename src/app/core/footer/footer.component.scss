@@ -1,0 +1,21 @@
+#iconsFooter {
+    display: flex;
+    flex-wrap: wrap;    
+    justify-content: center;
+    align-items: center;
+}
+
+#iconsFooter a {
+    color: black;
+    margin-left: 30px;
+    font-size: 1.5rem;
+}
+
+#iconsFooter a:hover {
+    color: blue;
+}
+
+#conteudoFooter {
+    font-size: 1.3rem;
+    text-align: center;
+}

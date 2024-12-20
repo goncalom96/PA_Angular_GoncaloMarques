@@ -1,0 +1,12 @@
+<section id="wishlist">
+    <h1>Wishlist</h1>
+    <div id="produtos" *ngFor="let produto of wishlist" (click)="mostraInfo(produto.id!)">
+        <p><img width="200px" alt="Imagem principal" [src]="'assets/img/' + produto.foto_principal" /></p>
+        <div id="texto">
+            <p><strong>{{ produto.marca}}</strong></p>
+            <small>{{ produto.nome}}</small>
+            <p id="preco">{{ produto.preco}}€</p>
+        </div>
+        <p><button id="btRemover" type="button" (click)="removeProdutoWishlist(produto)">Remover</button></p>
+    </div>
+</section>

@@ -1,0 +1,6 @@
+<section id="formPesquisa">
+    <p><label for="pesquisa">Pesquisa:</label> <input type="text" id="pesquisa" [(ngModel)]="campoPesquisa" autofocus>
+        <input type="button" value="Pesquisar" (click)="processaPesquisa()"> <input type="button" value="Limpar pesquisa"
+            (click)="limpaPesquisa()"></p>
+    <p>Palavra pesquisada: {{ campoPesquisa }}</p>
+</section>

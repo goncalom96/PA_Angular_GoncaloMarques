@@ -1,0 +1,29 @@
+h1 {
+    text-align: center;
+    padding-top: 20px;
+  }
+
+#saldos {
+  padding-bottom: 50px;
+}
+
+#produtosDestaque {
+    padding-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+}
+
+#imagensProdutos img {
+    border: 2px solid transparent;
+  }
+  
+#imagensProdutos img:hover {
+    border-color: red;
+  }
+h1 {
+  font-size: 4rem;
+}

@@ -1,0 +1,61 @@
+<form id="formProdutos" [formGroup]="formProdutos" (ngSubmit)="insereProduto()">
+    <small>Todos os campos assinalados com * são de preenchimento obrigatório.</small>
+
+    <p><label for="nome">Nome:</label> <input type="text" id="nome" formControlName="nome"> <span
+            class="obrigatorio">*</span></p>
+    <ng-container *ngIf="formProdutos.get('nome')?.touched && formProdutos.get('produto')?.invalid">
+        <small *ngIf="formProdutos.get('nome')?.hasError('required')">O campo 'Nome' é de preenchimento
+            obrigatório!</small>
+    </ng-container>
+
+    <p><label for="marca">Marca:</label> <input type="text" id="marca" formControlName="marca"><span
+            class="obrigatorio">*</span></p>
+    <ng-container *ngIf="formProdutos.get('marca')?.touched && formProdutos.get('marca')?.invalid">
+        <small *ngIf="formProdutos.get('marca')?.hasError('required')">O campo 'Marca' é de preenchimento
+            obrigatório!</small>
+    </ng-container>
+
+    <p><label for="tipo_de_produto">Tipo:</label>
+        <select id="tipo_de_produto" formControlName="tipo_de_produto">
+            <option value="">-- Selecionar um tipo de produto --</option>
+            <option value="calcas">Calças</option>
+            <option value="camisa">Camisa</option>
+            <option value="casaco">Casaco</option>
+            <option value="tshirt">T-Shirt</option>
+            <option value="sweatshirt">Sweatshirt</option>
+        </select>
+        <span class="obrigatorio">*</span></p>
+    <ng-container *ngIf="formProdutos.get('tipo_de_produto')?.touched && formProdutos.get('tipo_de_produto')?.invalid">
+        <small *ngIf="formProdutos.get('tipo_de_produto')?.hasError('required')">O campo 'Tipo' é de preenchimento
+            obrigatório!</small>
+    </ng-container>
+
+    <p><label for="cor">Cor:</label> <input type="text" id="cor" formControlName="cor"><span class="obrigatorio">*</span></p>
+    <ng-container *ngIf="formProdutos.get('cor')?.touched && formProdutos.get('cor')?.invalid">
+        <small *ngIf="formProdutos.get('cor')?.hasError('required')">O campo 'Cor' é de preenchimento
+            obrigatório!</small>
+    </ng-container>
+
+    <p><label for="preco">Preço:</label> <input type="text" id="preco" formControlName="preco"> <span class="obrigatorio">*</span></p>
+    <ng-container *ngIf="formProdutos.get('preco')?.touched && formProdutos.get('preco')?.invalid">
+        <small *ngIf="formProdutos.get('preco')?.hasError('required')">O campo 'Preço' é de preenchimento
+            obrigatório!</small>
+    </ng-container>
+
+    <p><label for="descricao">Descrição:</label> <input type="text" id="descricao" formControlName="descricao"> <span class="obrigatorio">*</span></p>
+    <ng-container *ngIf="formProdutos.get('descricao')?.touched && formProdutos.get('descricao')?.invalid">
+        <small *ngIf="formProdutos.get('descricao')?.hasError('required')">O campo 'Descriçao' é de preenchimento
+            obrigatório!</small>
+    </ng-container>
+
+           <p><label for="destaque">Destaque:</label><input type="radio" id="destaque" formControlName="destaque"><span class="obrigatorio">*</span></p>
+    <ng-container *ngIf="formProdutos.get('destaque')?.touched && formProdutos.get('destaque')?.invalid">
+        <small *ngIf="formProdutos.get('destaque')?.hasError('required')">O campo 'Destaque' é de preenchimento
+            obrigatório!</small>
+    </ng-container> 
+
+    <section>
+        <p><input id="btInserir" type="submit" value="Inserir produto" [disabled]="formProdutos.invalid"></p>
+    </section>
+
+</form>
